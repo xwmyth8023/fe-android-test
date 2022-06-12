@@ -1,4 +1,4 @@
-import LoginPage from  '../pageobjects/login.page';
+import LoginPage from  '../../pageobjects/login.page';
 
 describe('test login', async () => {
   it('test 1', async () => {

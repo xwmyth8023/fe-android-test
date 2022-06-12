@@ -1,1 +1,9 @@
+#packages
 node_modules
+
+# report
+reports
+
+#logs
+logs
+*.log

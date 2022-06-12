@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -129,13 +129,14 @@ exports.config = {
         {
             // This will use the globally installed version of Appium
             command: "appium",
+            logPath: "./logs",
             args: {
                 // This is needed to tell Appium that we can execute local ADB commands
                 // and to automatically download the latest version of ChromeDriver
                 relaxedSecurity: true,
                 address: "localhost",
                 // Write the Appium logs to a file in the root of the directory
-                log: "./appium.log",
+                log: "./logs/appium.log",
             },
         }
       ]
@@ -161,7 +162,16 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: [
+      'dot',
+      // [
+      //   'mochawesome',
+      //   { 
+      //     stdout: true,
+      //     outputDir: './reports'
+      //   }
+      // ]
+    ],
 
 
     
