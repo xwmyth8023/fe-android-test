@@ -4,7 +4,8 @@
   "description": "Andrpoid UI automation with webdriverio and appium",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js"
+    "test": "wdio run ./config/wdio.conf.js",
+    "browserstack": "wdio run ./config/wdio.browserstack.conf.js"
   },
   "author": "sxiong",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/register": "^7.17.7",
     "@wdio/appium-service": "^7.20.1",
+    "@wdio/browserstack-service": "^7.20.2",
     "@wdio/cli": "^7.20.1",
     "@wdio/dot-reporter": "^7.20.0",
     "@wdio/local-runner": "^7.20.1",
