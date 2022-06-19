@@ -57,22 +57,35 @@ exports.config = {
   path: "/wd/hub",
   capabilities: [ 
     {
-      "bstack:options":{
-      // Set your BrowserStack config
+      "platformName" : "android",
+      "platformVersion" : "9.0",
+      "deviceName" : "Google Pixel 3",
+      "app" : "bs://app_id",
+      'bstack:options' : {
         'browserstack.debug': true,
-        // Set URL of the application under test
-        "app": process.env.BROWSERSTACK_APP_ID || 'bs://app_id',
-
-        // Specify device and os_version for testing
-        "device": 'Google Pixel 3',
-        "os_version": '9.0',
-
-        // Set other BrowserStack capabilities
-        "project": 'wdio-test-project',
-        "build": 'browserstack-build-1',
-        "name": 'wdio-test'
+        "projectName" : "test",
+        "buildName" : "tt1",
+        "userName" : "bs user name",
+        "accessKey" : "bs access key",
       },
-    }
+    },
+    // {
+    //   "bstack:options":{
+    //   // Set your BrowserStack config
+    //     'browserstack.debug': true,
+    //     // Set URL of the application under test
+    //     "app": process.env.BROWSERSTACK_APP_ID || 'bs://app_id',
+
+    //     // Specify device and os_version for testing
+    //     "device": 'Google Pixel 3',
+    //     "os_version": '9.0',
+
+    //     // Set other BrowserStack capabilities
+    //     "project": 'wdio-test-project',
+    //     "build": 'browserstack-build-1',
+    //     "name": 'wdio-test'
+    //   },
+    // }
       // maxInstances can get overwritten per capability. So if you have an in-house Selenium
       // grid with only 5 firefox instances available you can make sure that not more than
       // 5 instances get started at a time.
