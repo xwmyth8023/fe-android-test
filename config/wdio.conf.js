@@ -277,8 +277,9 @@ exports.config = {
      * @param {Boolean} result.passed    true if test has passed, otherwise false
      * @param {Object}  result.retries   informations to spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+    afterTest: function(test, context, { error, result, duration, passed, retries }) {
+      console.log('result: ==============', result)
+    },
 
 
     /**
@@ -304,7 +305,8 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that ran
      */
     after: function (result, capabilities, specs) {
-      console.log('result:', result)
+      // can push result to test rail
+      console.log('result: ==============', result)
       console.log('caps:', capabilities),
       console.log('specs:', specs)
     },
