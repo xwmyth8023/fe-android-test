@@ -49,54 +49,26 @@ exports.config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  user: process.env.BROWSERSTACK_USER || 'BROWSERSTACK_USER',
-  key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
-  runner: 'local',
-  hostname: 'hub.browserstack.com',
-  port: 4723,
-  path: "/wd/hub",
-  capabilities: [ 
+  user: process.env.BROWSERSTACK_USER || 'user name',
+  key: process.env.BROWSERSTACK_ACCESS_KEY || 'access key',
+  // runner: 'local',
+  // hostname: 'hub.browserstack.com',
+  // // port: ,
+  // path: "/wd/hub",
+  capabilities: [
     {
       "platformName" : "android",
-      "platformVersion" : "9.0",
-      "deviceName" : "Google Pixel 3",
-      "app" : "bs://app_id",
+      "appium:platformVersion" : "11.0",
+      "appium:deviceName" : "Samsung Galaxy S21",
+      "appium:app" : "bs://app",
       'bstack:options' : {
-        'browserstack.debug': true,
-        "projectName" : "test",
-        "buildName" : "tt1",
-        "userName" : "bs user name",
-        "accessKey" : "bs access key",
+        "projectName" : "TB Andorid",
+        "buildName" : "test",
+        "userName" : "user name",
+        "accessKey" : "access keys",
+        "acceptInsecureCerts": "true"
       },
     },
-    // {
-    //   "bstack:options":{
-    //   // Set your BrowserStack config
-    //     'browserstack.debug': true,
-    //     // Set URL of the application under test
-    //     "app": process.env.BROWSERSTACK_APP_ID || 'bs://app_id',
-
-    //     // Specify device and os_version for testing
-    //     "device": 'Google Pixel 3',
-    //     "os_version": '9.0',
-
-    //     // Set other BrowserStack capabilities
-    //     "project": 'wdio-test-project',
-    //     "build": 'browserstack-build-1',
-    //     "name": 'wdio-test'
-    //   },
-    // }
-      // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-      // grid with only 5 firefox instances available you can make sure that not more than
-      // 5 instances get started at a time.
-      // maxInstances: 5,
-      //
-      // browserName: 'chrome',
-      // acceptInsecureCerts: true
-      // If outputDir is provided WebdriverIO can capture driver session logs
-      // it is possible to configure which logTypes to include/exclude.
-      // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-      // excludeDriverLogs: ['bugreport', 'server'],
   ],
   //
   // ===================
@@ -146,7 +118,7 @@ exports.config = {
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
   services: [
-    'browserstack'
+    'browserstack',
   ],
   
   // Framework you want to run your specs with.
